@@ -1,0 +1,96 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/seaff.css">
+  <title>Shopify Embedded App Frontend Framework</title>
+</head>
+<body>
+  
+  <div class="section">
+    <div class="section-content">
+      <div class="section-row">
+        <div class="section-listing">
+          <div class="section-options">
+            <ul class="section-tabs">
+              <li class="active"><a href="#top">All Orders</a></li>
+              <li class=""><a href="#top">Open</a></li>
+              <li class=""><a href="#top">Unfulfilled</a></li>
+              <li class=""><a href="#top">Unpaid</a></li>
+            </ul>
+
+            <div class="section-filter">
+              <div class="section-row">
+                <a class="btn filter-left" href="#">Filter orders <span class="icon ico-down"></span></a>
+                <input class="input-search" type="text" placeholder="Start typing to search for orders...">
+              </div>
+            </div>
+
+            <div class="section-content">
+              <div class="section-row">
+                <table class="table-section">
+                  <thead>
+                    <tr>
+                      <th class="select-col">
+                        <div class="btn default btn-select-all ico-down">
+                          <input class="checkbox" type="checkbox" name="select-all" id="select-all" value="">
+                          <span class="checkbox-styled"></span>
+                        </div>
+                      </th> 
+                      <th class="sortable">Oder</th>
+                      <th class="sortable">Date</th>
+                      <th class="sortable">Customer</th>
+                      <th class="sortable">Payment Status</th>
+                      <th class="sortable">Fulfillment Status</th>
+                      <th class="sortable tr">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a class="subdued" href="#top">#1012</a></td>
+                      <td><p class="subdued">November 1, 12:30pm</p></td>
+                      <td><a class="subdued underlined" href="#top">John Johnson</a></td>
+                      <td><span class="tag lightgray">Paid</span></td>
+                      <td><span class="tag yellow">Unfulfilled</span></td>
+                      <td class="tr"><p class="subdued">$ 120.50</p></td>
+                    </tr>
+                    <tr>
+                      <td><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a class="warning" href="#top">#1013</a></td>
+                      <td><p class="warning">November 1, 12:35pm</p></td>
+                      <td><a class="warning underlined" href="#top">Phil Philips</a></td>
+                      <td><span class="tag orange">Pending</span></td>
+                      <td><span class="tag yellow">Unfulfilled</span></td>
+                      <td class="tr"><p class="danger">$ 600.00</p></td>
+                    </tr>
+                    <tr>
+                      <td><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a href="#top">#1014</a></td>
+                      <td><p>November 1, 12:40pm</p></td>
+                      <td><a class="underlined normal" href="#top">Jay Jayson</a></td>
+                      <td><span class="tag orange">Pending</span></td>
+                      <td><span class="tag yellow">Unfulfilled</span></td>
+                      <td class="tr"><p>$ 550.00</p></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="section-content">
+              <div class="section-row">
+                <div class="pagination">
+                  <a class="btn btn-left disabled" href="#"><span class="ico-prev"></span></a>
+                  <a class="btn btn-right default" href="#"><span class="ico-next"></span></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

@@ -1,0 +1,201 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/seaff.css">
+  <link rel="stylesheet" type="text/css" href="../css/seaff-dropdown.css">
+  <title>Shopify Embedded App Frontend Framework - Wholesaler App products view</title>
+</head>
+<body>
+
+  <div class="box notice"><span class="ico-notice"></span><a href="#" class="box-close"><span class="icon ico-clear-bluegray"></span></a>If you enjoy using <b>Wholesaler</b> consider leaving a positive review on our page. Positive reviews create <b>valuable SEO Links</b> to your website from the app store! <a href="#">Click here</a> to leave your review now.</div>
+  
+  <div class="section">
+    <div class="section-content">
+      <div class="section-row">
+
+        <div class="section-listing">
+          <div class="section-options">
+            <ul class="section-tabs">
+              <li class="active"><a href="#top">All Products</a></li>
+              <li class=""><a href="#top">Wholesale Products</a></li>
+              <li class=""><a href="#top">Non Wholesale Products</a></li>
+            </ul>
+
+            <div class="section-filter">
+              <div class="section-row">
+                <a class="btn filter-left" href="#" data-jq-dropdown="#filter-dropdown">Filter products <span class="icon ico-down"></span></a>
+                <input class="input-search" type="text" placeholder="Start typing to search for products...">
+              </div>
+            </div>
+
+            <div class="section-content">
+
+              <div class="section-row">
+                <table class="table-section">
+                  <thead>
+                    <tr>
+                      <th class="select-col">
+                        <div id="select-all-items" class="btn default btn-select-all ico-down">
+                          <input class="checkbox" type="checkbox" name="select-all" id="select-all" value="">
+                          <span class="checkbox-styled"></span>
+                        </div>
+
+                        <div class="menu-items-selected" style="display:none;">
+                          <ul class="segmented">
+                            <li>
+                              <div class="btn disabled btn-slim">
+                                <div class="checkbox-wrapper">
+                                  <input id="unselect-all-items" class="checkbox" type="checkbox" name="select-all" id="select-all" value=""><span class="checkbox-styled"></span>
+                                </div>
+                                <span class="items-selected"></span>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="btn default btn-slim">Edit products</div>
+                            </li>
+                          </ul>
+                          <span class="all-selected-msg">All products on this page are selected.</span>
+                        </div>
+                      </th>
+                      <th>Product</th>
+                      <th class="col-center">Small Wholesaler</th>
+                      <th class="col-center">Medium Wholesaler</th>
+                      <th class="col-center">Large Wholesaler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="select-col"><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a href="#"><p>Product name</p></a></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-fail-red"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="select-col"><input class="checkbox" type="checkbox" value=""/><span class="checkbox-styled"></span></td>
+                      <td><a href="#"><p>Product name</p></a></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-fail-red"></span></td>
+                      <td class="col-center"><span class="icon ico-fail-red"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="select-col"><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a href="#"><p>Product name</p></a></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-fail-red"></span></td>
+                    </tr>
+                    <tr>
+                      <td class="select-col"><input class="checkbox" type="checkbox" value="" /><span class="checkbox-styled"></span></td>
+                      <td><a href="#"><p>Product name</p></a></td>
+                      <td class="col-center"><span class="icon ico-fail-red"></span></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                      <td class="col-center"><span class="icon ico-checkmark-green"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="section-content">
+              <div class="section-row">
+                <div class="pagination">
+                  <a class="btn btn-left disabled" href="#"><span class="ico-prev"></span></a>
+                  <a class="btn btn-right default" href="#"><span class="ico-next"></span></a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="filter-dropdown" class="jq-dropdown jq-dropdown-tip">
+    <div class="jq-dropdown-panel">
+      Show all:
+      <div class="select-wrapper">
+        <select class="select">
+          <option>Select a filter...</option>
+          <option value="">Wholesale Products</option>
+          <option value="">Non Wholesale Products</option>
+        </select>
+    </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-dropdown.js"></script>
+
+  <script type="text/javascript">
+
+    function selection() {
+      var sel = $('td .checkbox:checked').size();
+      if (sel == 0) {
+        $('.menu-items-selected').hide();
+        $('.checkbox').prop('checked', false);
+        $('#unselect-all-items').prop("indeterminate", false);
+        $('#select-all-items').show();
+        $('thead tr th:not(.select-col)').css('visibility', 'visible');
+      
+      } else if (sel > 0) {
+        $('.menu-items-selected').show();
+        $('#select-all-items').hide();
+        $('#unselect-all-items').prop("indeterminate", true);
+        $('.items-selected').html((sel > 1) ? sel + ' products selected':'1 product selected');
+        $('thead tr th:not(.select-col)').css('visibility', 'hidden');
+      }
+
+      if (sel == $('td .checkbox').size()) {
+        $('thead tr th:not(.select-col)').css('visibility', 'hidden');
+        $('.all-selected-msg').css('display', 'inline-block');
+        $('#unselect-all-items').prop("indeterminate", false);
+        $('#unselect-all-items').prop("checked", true);
+      }
+    }
+
+    $('#select-all-items').click(function () {
+      $(this).hide();
+      $('.checkbox').prop('checked', true);
+      $('tbody tr').addClass('selected');
+
+      $('.items-selected').html(function () {
+        var number = $('tbody tr').size();
+        return  (number > 1) ? number + ' products selected':'1 product selected';
+      });
+      $('.menu-items-selected').show();
+
+      $('thead tr th:not(.select-col)').css('visibility', 'hidden');
+      $('.all-selected-msg').css('display', 'inline-block');
+    });
+
+    $('#unselect-all-items').click(function () {
+      if ($('td .checkbox:checked').size() < $('td .checkbox').size()) {
+        $('#select-all-items').trigger('click');
+      
+      } else {
+        $('.menu-items-selected').hide();
+        $('.checkbox').prop('checked', false);
+        $('tbody tr').removeClass('selected');
+
+        $('#select-all-items').show();
+
+        $('thead tr th:not(.select-col)').css('visibility', 'visible');
+        $('.all-selected-msg').css('display', 'none');
+      }
+    });
+
+    $('td .checkbox').click(function () {
+      if ($(this).prop('checked')) {
+        $(this).parents('tr').addClass('selected');
+      } else {
+        $(this).parents('tr').removeClass('selected');
+        $('.all-selected-msg').css('display', 'none');
+      }
+      selection();
+    });
+
+  </script>
+  
+</body>
+</html>

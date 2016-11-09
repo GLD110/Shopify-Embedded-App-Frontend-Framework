@@ -1,0 +1,1437 @@
+<html>
+<head>
+    <!-- Generic meta -->
+    <meta name="robots" content="index, follow, all" />
+    <meta name="expires" content="never" />
+    <meta name="distribution" content="world" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <meta name="copyright" content="Copyright (c) 2008-2015  microapps, S.L." />
+    <meta name="Author" content="microapps S.L."/>
+    <meta name="Publisher" content="microappss S.L."/>
+    <!-- Endof - Generic meta -->
+
+    <!-- Og generic meta -->
+    <meta property="og:site_name" content="EASDK - Shopify Embedded App Frontend Framework" />
+    <!-- Endof - Og Generic meta  -->
+
+    <!-- Dublin core meta -->
+    <meta name="DC.creator" content="microapps" />
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text" />
+    <meta name="DC.format" scheme="DCTERMS.IMT" content="text/html" />
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+    <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+    <meta name="DC.identifier" scheme="DCTERMS.URI" content="http://seaff.microapps.com/" />
+    <meta name="DC.subject" xml:lang="en" content="EASDK - Shopify Embedded App Frontend Framework" />
+    <meta name="DC.language" scheme="DCTERMS.URI" content="en" />
+    <!-- Endof - Dublin core  -->
+
+    <link rel="stylesheet" type="text/css" href="css/seaff.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://seaff.microapps.com/js/snippets-generator.js"></script>
+    <title>Shopify Embedded App Frontend Framework</title>
+</head>
+<body>
+<a style="position: absolute; top: 0px; right: 0px; border: 0px; z-index:10" target="_blank" href="https://github.com/microapps/Shopify-Embedded-App-Frontend-Framework"><img style="position: absolute; top: 0px; right: 0px; border: 0px; z-index:10" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+<div class="section">
+    <div class="section-summary">
+        <a name="summary"></a>
+        <h1>Summary</h1>
+        <p></p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <ul>
+                    <li>
+                        <a href="#introduction">Introduction</a>
+                        <ul>
+                            <li><a href="#introduction-overview">Overview</a></li>
+                            <li><a href="#introduction-what">Differences between Legacy Apps and Embedded Apps</a></li>
+                            <li><a href="#introduction-real">Real applications that are already using SEAFF</a></li>
+                            <li><a href="#introduction-about">About the documentation</a></li>
+                            <li><a href="#introduction-howuse">How to use the framework</a></li>
+                            <li><a href="#introduction-howcontribute">How to contribute</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#easdk">Embedded App SDK</a>
+                        <ul>
+                            <li><a href="#easdk-overview">Overview</a></li>
+                            <li><a href="#easdk-top">Top bar elements</a></li>
+                            <li><a href="#easdk-modals">Modals and flash messages</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sections">Sections</a>
+                        <ul>
+                            <li><a href="#sections-general">General Structure</a></li>
+                            <li><a href="#sections-sample1">Sample Snippet 1 - Section with a single row and a single cell</a></li>
+                            <li><a href="#sections-sample2">Sample Snippet 2 - A section row with 3 cells</a></li>
+                            <li><a href="#sections-sample3">Sample Snippet 3 - A section row with a cell divided in columns</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#inputs">Inputs</a>
+                        <ul>
+                            <li><a href="#inputs-input">Text input</a></li>
+                            <li><a href="#inputs-textarea">Text Area</a></li>
+                            <li><a href="#inputs-dropdown">Drop-down</a></li>
+                            <li><a href="#inputs-radio">Radio Button</a></li>
+                            <li><a href="#inputs-check">Check Box</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#links">Links</a>
+                        <ul>
+                            <li><a href="#links-default">Default Link</a></li>
+                            <li><a href="#links-warning">Warning Link</a></li>
+                            <li><a href="#links-help">Help Link</a></li>
+                            <li><a href="#links-tooltip">Tooltip</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#buttons">Buttons & Links as Buttons</a>
+                        <ul>
+                            <li><a href="#buttons-primary">Primary Button</a></li>
+                            <li><a href="#buttons-default">Default Button</a></li>
+                            <li><a href="#buttons-destroy">Destroy Button</a></li>
+                            <li><a href="#buttons-disabled">Disabled Button</a></li>
+                            <li><a href="#buttons-slim">Slim Button</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#segmented-buttons">Segmented Buttons</a>
+                        <ul>
+                            <li><a href="#segmented-primary">Segmented Primary Buttons</a></li>
+                            <li><a href="#segmented-default">Segmented Default Buttons</a></li>
+                            <li><a href="#segmented-mixed">Mixed Segmented Buttons</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tags">Tags</a>
+                        <ul>
+                            <li><a href="#tags-general">General Structure</a></li>
+                            <li><a href="#tags-lightgray">Light gray tag</a></li>
+                            <li><a href="#tags-gray">Gray tag</a></li>
+                            <li><a href="#tags-blue">Blue tag</a></li>
+                            <li><a href="#tags-orange">Orange tag</a></li>
+                            <li><a href="#tags-inactive">Inactive tag</a></li>
+                            <li><a href="#tags-closable">Closable tag</a></li>
+                        </ul>
+                    </li>
+                    <li style="display:none">
+                        <a href="#containers">Containers</a>
+                        <ul>
+                            <li><a href="#containers-general">General Structure</a></li>
+                            <li><a href="#containers-default">Default Container</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#tables">Tables</a>
+                        <ul>
+                            <li><a href="#tables-regular">Regular table</a></li>
+                            <li><a href="#tables-full">Full width table</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#message-boxes">Message boxes</a>
+                        <ul>
+                            <li><a href="#warning-box">Warning Box</a></li>
+                            <li><a href="#notice-box">Notice Box</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#icons">Icons</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="Introduction"></a>
+        <h1>Introduction</h1>
+        <p>A small introduction of the framework</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-overview"></a>
+                <label>Overview</label>
+                <p>This framework is built and updated by <a href="http://www.microapps.com" target="_blank">microapps</a> based on the layout of Shopify merchant admin, as well as its embedded applications, in order to help the developers to easily and quickly write the application's frontend so that it has the same look and feel as Shopify merchant admin.</p>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-about"></a>
+                <label>About the documentation</label>
+                <p>The documentation follows the framework interface and it is divided by sections, which are organized in rows and cells. In which section it is possible to see the elements that are being described by the framework as well as the code used to generate such elements.</p>
+                <p>For the most complex structures, a brief explanation will be given along with the sample and the snippet, while for the simple elements, they along with the snippet are self explanatory</p>
+
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-what"></a>
+                <label>Differences between Legacy Apps and Embedded Apps</label>
+                <p>The legacy apps, nowadays the most common among all apps available for installation for Shopify stores, are apps that, when accessed through the merchant's store admin, open in a new window or tab, as total "independent" (considering the user experience) application, even though it is obviously tightly related to Shopify in terms of funcionality and use of information. </p>
+                <p>Because of this, in order to improve the user experience, Shopify has given the application developers the possibility to develop embedded applications or, in other words, Shopify now allows developers to embed their applications directly inside Shopify admin as well as access and customize many native GUI features. </p>
+                <p><img style="box-sizing: border-box; width: 100%;" src="http://docs.shopify.com/assets/images/easdk/easdk-hero-banner.png?1412114319" /></p>
+
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-real"></a>
+                <label>Real applications that are already using SEAFF</label>
+                <p>Check the following list of apps available for installation, in order to take a look at a real embedded app using SEAFF:</p>
+                <ul>
+                    <li><a href="https://apps.shopify.com/shopimap?ref=microapps" target="_blank">ShopiMap</a> - Generate a map of customers for the store.<br/></li>
+                    <li><a href="https://apps.shopify.com/abandon-app?ref=microapps" target="_blank">MoonMail Recover Checkouts </a> - Recover Abandoned Checkouts by MoonMail.io<br/></li>
+                    <li><a href="https://apps.shopify.com/seo-meta-manager?ref=microapps" target="_blank">SEO Manager</a> - Extensive suite of SEO tools for Shopify.<br/></li>
+                    <li><a href="https://apps.shopify.com/wholesaler?ref=microapps" target="_blank">Wholesaler</a> - Customer pricing based app. Sell the same product at diferent prices depending on customer status/role.<br/></li>
+                    <li><a href="https://apps.shopify.com/respondify?ref=microapps" target="_blank">MoonMail Autoresponders</a> - Event based trigger emails by MoonMail.io.<br/></li>
+                </ul>
+                <p>If your Shopify app uses SEAFF and you want it to be listed here, just fork the project, add your app and do a PR against master.</p>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-what"></a>
+                <label>Files involved in an Embedded App built with SEAFF</label>
+                <p>To build an embedded app using SEAFF, there are 3 main files involved in the job</p>
+                <ul>
+                    <li><b>SEAFF (Shopify Embedded App Frontend Framework) css file </b>- has all the elements needed to build a good looking embedded application</li>
+                    <li><b>EASDK (Embedded App SDK) js file</b> - has all the elements needed to build a good looking embedded application</li>
+                    <li><b>Your project HTML files</b> - has to follow the structures defined and explained in this document in order to be well rendered into a very good-looking embedded application.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-howuse"></a>
+                <label>How to use the framework</label>
+                <p>This is essentialy a CSS framework, so in order to use it, all you have to do is to add <a target="_blank" href="http://seaff.microapps.com/css/seaff.css">seaff.css</a> to your application page(s), as shows the following snippet:</p>
+                <label>Code</label>
+                <div class="container to-code">
+                    <link rel="stylesheet" type="text/css" href="seaff.css">
+                </div>
+                <p>You can notice by taking a look at the code snippet of each interface element that the styles are applied by putting specific classes to it.</p>
+                <p>This documentation provides snippets for default usage of the classes but, for some elements, different tags can be rendered by using the same class.</p>
+                <p>It is also important to notice that some elements have already all the styles applied to them without using any classes and that for some elements besides the main class there is also a modifier class, that should change that element styles a little.
+                    Therefore, the structure of the tags can be generically described, ignoring the attributes and considering "[...]" as optional blocks, using an example of a opening tag, as: </p>
+                <label>Code</label>
+                <div class="container to-code">
+                    <tag  [class="main_class[ modifier_1[ ...[ modifier_N]]]"]>
+                    </tag>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="introduction-howcontribute"></a>
+                <label>How to contribute</label>
+                <p>This framework is meant for anyone who wants to have a very good-looking application, following all the patterns stabilished by Shopify merchant admin, and its development is also opened to everyone interested on offering help, which is very appreciated.</p>
+                <p>In order to contribute, just fork the repository <a href="https://github.com/microapps/Shopify-Embedded-App-Frontend-Framework" target="_blank" rel="nofollow">Shopify-Embedded-App-Frontend-Framework</a> and do as many pull requests as you wish.</p>
+                <p>We thank you in advance!<p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="easdk"></a>
+        <h1>Embedded App SDK</h1>
+        <p>This section gives an overview about the SDK, used to embed the application into Shopify environment, to add buttons to the header, build modals and show messages to the user.</p>
+        <p><a href="http://docs.shopify.com/embedded-app-sdk?ref=microapps" target="_blank" rel="nofollow" class="btn default">Check SDK docs</a></p>
+    </div>
+
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="easdk-overview"></a>
+                <label>Overview</label>
+                <p>As said before, Embedded Apps are those that are accessed inside of the Shopify Merchant Admin, what makes the experience of using an application much better, since the merchant feels inside the environment, as if your application were part of Shopify functionalities.</p>
+                <p>The Embedded App SDK (EASDK) is an API that provides:</p>
+                <ul>
+                    <li>Custom modal windows</li>
+                    <li>
+                        Dialogs:
+                        <ul>
+                            <li>Alert</li>
+                            <li>Confirm</li>
+                            <li>Input</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Top bar with icon elements:
+                        <ul>
+                            <li>Icon</li>
+                            <li>Breadcrumbs</li>
+                            <li>Buttons</li>
+                            <li>Pagination</li>
+                            <li>Dropdown menus</li>
+                        </ul>
+                    </li>
+                    <li>Flash messages</li>
+                </ul>
+                <p>The SDK can be added to your application by including the following snippet</p>
+                <div class="container">
+                    &lt;script src="https://cdn.shopify.com/s/assets/external/app.js"&gt;&lt;/script&gt;
+                </div>
+                <p>To learn more and check the full documentation of EASDK, please check <a href="http://docs.shopify.com/embedded-app-sdk?ref=microapps" target="_blank">this link</a>.</p>
+                <p>You can also check all the elements explained in this section by using <a href="https://github.com/Shopify/embedded-app-example" target="_blank">this sample application</a>, provided by <a href="http://www.shopify.com/?ref=microapps" target="_blank">Shopify</a> team.</p>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="easdk-top"></a>
+                <label>Top bar elements</label>
+                <p>The top bar is where most of the elements mentioned in <a href="#easdk-overview">overview</a> are placed.</p>
+                <p>Although the elements of the top bar have the same layout as SEAFF elements, all these elements are inserted by calling methods of Shopify Embedded App SDK and their layout is not influenced by any of SEAFF styles, since they are placed in your application's "parent environment".</p>
+                <p></p>
+                <p>To have the complete information about what can be placed in top bar, check the <a href="http://docs.shopify.com/embedded-app-sdk/methods" target="_blank">Embedded App SDK documentation</a>.</p>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="easdk-modals"></a>
+                <label>Modals and Flash Messages</label>
+                <p>The <a href="http://docs.shopify.com/embedded-app-sdk/methods" target="_blank">Embedded App SDK</a> also has modals and flash messages for several purposes. Despite the content of modals that use iframe, the layout of the modals is out of your application's control and therefore it is not influenced by SEAFF CSS styles.</p>
+                <p>Since it is not possible to simulate the modal windows using the SDK in this page, below are placed some images that show what kind of messages can be displayed to the merchant as well as how they look like</p>
+                <p><label>Alert Modal</label></p>
+                <p><img src="http://seaff.microapps.com/image/modal-alert.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Confirm Modal</label></p>
+                <p><img src="http://seaff.microapps.com/image/modal-confirm.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Prompt Modal</label></p>
+                <p><img src="http://seaff.microapps.com/image/modal-prompt.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Modal containing an iframe</label></p>
+                <p><img src="http://seaff.microapps.com/image/modal-iframe.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Modal with several buttons and an iframe</label></p>
+                <p><img src="http://seaff.microapps.com/image/modal-iframe-buttons.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Flash Messages</label></p>
+                <p>This message is shown at the bottom of the page. A very common use of it is to give the merchant a feedback when an action was successfully done.</p>
+                <p><img src="http://seaff.microapps.com/image/flash-message.png" style="box-sizing:border-box;width:100%;" /></p>
+                <p><label>Flash Errors</label></p>
+                <p>This message, like the flash messages, is shown at the bottom of the page to represent errors generated by some action done by the merchant.</p>
+                <p><img src="http://seaff.microapps.com/image/flash-error.png" style="box-sizing:border-box;width:100%;" /></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="sections"></a>
+        <h1>Sections</h1>
+        <p>The sections are the main organizational unit of the framework</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="sections-general"></a>
+                <label>General Structure</label>
+                <p>"Introduction", "Sections", "General Inputs", among others, are examples of sections. The sections are used to organize the blocks of information all over the applications (and also all over this document) and they fill the full available width provided by Shopify merchant admin.</p>
+                <p>Below some little facts about the sections that are important to be taken into account when organizing the interface:</p>
+                <ul>
+                    <li>The sections are divided into two main blocks, the summary and the content.</li>
+                    <li>The content is divided into rows (as many as you want).</li>
+                    <li>The rows are divided into cells (as many as you want). </li>
+                </ul>
+                <p>"Sections" is a good example of a section with multiple rows and cells. The snippet below shows the general structure of a section:</p>
+                <label for="code-11">Code</label>
+                <div class="container to-code">
+                    <!-- This is a section -->
+                    <div class="section">
+                        <!-- Section summary -->
+                        <div class="section-summary">
+                            <h1>Section title</h1>
+                            <p>Section explanation</p>
+                        </div>
+                        <!-- Section content with generic quantity of rows-->
+                        <div class="section-content">
+                            <!-- A section row with generic quantity of cells -->
+                            <div class="section-row">
+                                <div class="section-cell">
+                                    <div class="cell-container">
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                        ...
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                    </div>
+                                </div>
+                                ...
+                                <div class="section-cell">
+                                    <div class="cell-container">
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                        ...
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ...
+                            <div class="section-row">
+                                <div class="section-cell">
+                                    <div class="cell-container">
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                        ...
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                    </div>
+                                </div>
+                                ...
+                                <div class="section-cell">
+                                    <div class="cell-container">
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                        ...
+                                        <div class="cell-column">
+                                            ...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="sections-sample1"></a>
+                <label>Sample Snippet 1 - Section with a single row and a single cell</label>
+                <p>"Links", among other sections along this document, is a good example of this kind of section. The following snippet shows how to create this kind of section.</p>
+                <label for="code-11">Code</label>
+                <div class="container to-code">
+                    <div class="section">
+                        <div class="section-summary">
+                            <h1>Section title</h1>
+                            <p>Section explanation</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="section-row">
+                                <div class="section-cell">
+                                    Information related to the section
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="sections-sample2"></a>
+                <label>Sample Snippet 2 - A section row with 3 cells</label>
+                <p>The sample snippet below is used to generate a row with 3 cells. Notice that this snippet reffers only to the row and the cells and doesn't take the other parts of the section structure. To build a whole section with 3 sections, replace all the rows in <a href="#anchortothatsnippet">this snippet</a> for the row below.</p>
+                <p>The following snippet reffers to the row just below it.</p>
+                <label>Code</label>
+                <div class="container to-code">
+                    <div class="section-row">
+                        <div class="section-cell">
+                            <label>Cell 1</label>
+                            This is a cell.
+                        </div>
+                        <div class="section-cell">
+                            <label>Cell 2</label>
+                            This is a cell.
+                        </div>
+                        <div class="section-cell">
+                            <label>Cell 3</label>
+                            This is a cell.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <label>Cell 1</label>
+                This is a cell.
+            </div>
+            <div class="section-cell">
+                <label>Cell 2</label>
+                This is a cell.
+            </div>
+            <div class="section-cell">
+                <label>Cell 3</label>
+                This is a cell.
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="sections-sample3"></a>
+                <label>Sample Snippet 3 - A section row with a cell divided in columns</label>
+                <p>The sample snippet below is used to generate a row with 1 cell divided into columns ("Column 1" and "Column 2"), the second one subdivided in 2 columns ("Column 2A" and "Column 2B")</p>
+                <p>It is possible to add as many "cell-column" divs as you want and it is also possible to add "cell-container" div inside any "cell-column", to subdvide it in more columns. </p>
+                <label>Code</label>
+                <div class="container to-code">
+                    <div class="section-row">
+                        <div class="section-row">
+                            <div class="section-cell">
+                                <div class="cell-container">
+                                    <div class="cell-column">
+                                        <label>Column 1</label>
+                                        <p>This is the first column</p>
+                                    </div>
+                                    <div class="cell-column">
+                                        <label>Column 2</label>
+                                        <p>This is the second column. Below you there is another "cell-container" div divided in 2 other columns</p>
+                                        <div class="cell-container">
+                                            <div class="cell-column">
+                                                <label>Column 2A</label>
+                                                <p>This is the first column inside the "Column 2"</p>
+                                            </div>
+                                            <div class="cell-column">
+                                                <label>Column 2B</label>
+                                                <p>This is the second column inside the "Column 2"</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <div class="cell-container">
+                    <div class="cell-column">
+                        <label>Column 1</label>
+                        <p>This is the first column</p>
+                    </div>
+                    <div class="cell-column">
+                        <label>Column 2</label>
+                        <p>This is the second column. Below you there is another "cell-container" div divided in 2 other columns</p>
+                        <div class="cell-container">
+                            <div class="cell-column">
+                                <label>Column 2A</label>
+                                <p>This is the first column inside the "Column 2"</p>
+                            </div>
+                            <div class="cell-column">
+                                <label>Column 2B</label>
+                                <p>This is the second column inside the "Column 2"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="inputs"></a>
+        <h1>Inputs</h1>
+        <p>In this section, the general inputs are documented (text input, text areas, dropdowns, etc)</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="inputs-input"></a>
+                <label for="text1">Text input</label>
+                <input type="text" placeholder="Text about the input"/><br/>
+                <label>Code</label>
+                <div class="container to-code">
+                    <input type="text" placeholder="Text about the input"/>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="inputs-textarea"></a>
+                <label for="text2">Text area</label>
+                <textarea placeholder="Text about the input"></textarea><br/>
+                <label>Code</label>
+                <div class="container to-code">
+                    <textarea placeholder="Text about the input"></textarea>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="inputs-dropdown"></a>
+                <label>Drop-down</label>
+                <select name="select1">
+                    <option value="opt1">Option 1</option>
+                    <option value="opt2">Option 2</option>
+                    <option value="opt3">Option 3</option>
+                    <option value="opt4">Option 4</option>
+                </select>
+                <label>Code</label>
+                <div class="container to-code">
+                    <select name="select1">
+                        <option value="opt1">Option 1</option>
+                        <option value="opt2">Option 2</option>
+                        <option value="opt3">Option 3</option>
+                        <option value="opt4">Option 4</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="inputs-radio"></a>
+                <label>Radio button</label><br />
+                <input id="radio1" type="radio" name="radio" value="radio1"><label for="radio1">Radio 1</label>
+                <input id="radio2" type="radio" name="radio" value="radio2"><label for="radio2">Radio 2</label>
+                <label>Code</label>
+                <div class="container to-code">
+                    <input id="rad1" type="radio" name="radio" value="radio1"><label for="rad1">Radio 1</label>
+                    <input id="rad2" type="radio" name="radio" value="radio2"><label for="rad2">Radio 2</label>
+                </div>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="inputs-check"></a>
+
+                <div class="input-wrapper inline">
+                  <div class="checkbox-wrapper"><input class="checkbox" type="checkbox" id="check1" name="check1" value="" /><span class="checkbox-styled"></span></div>
+                  <label for="check1">Check 1</label>
+                </div>
+                <div class="input-wrapper inline">
+                  <div class="checkbox-wrapper"><input class="checkbox" type="checkbox" id="check2" name="check2" value="" /><span class="checkbox-styled"></span></div>
+                  <label for="check2">Check 2</label>
+                </div>
+
+                <label>Code</label>
+                <div class="container to-code">
+                    <div class="input-wrapper inline">
+                      <div class="checkbox-wrapper"><input class="checkbox" type="checkbox" id="check1" name="check1" value="" /><span class="checkbox-styled"></span></div>
+                      <label for="check1">Check 1</label>
+                    </div>
+                    <div class="input-wrapper inline">
+                      <div class="checkbox-wrapper"><input class="checkbox" type="checkbox" id="check2" name="check2" value="" /><span class="checkbox-styled"></span></div>
+                      <label for="check2">Check 2</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="links"></a>
+        <h1>Links</h1>
+        <p>In this section you can find all the links provided by this framework</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="links-default"></a>
+                <a href="#top">Default Link</a><br /><br />
+                <label for="code-1">Code</label>
+                <div class="container to-code">
+                    <a href="#top">Default Link</a>
+                </div>
+                <p class="note">This is the default link. No class should be specified</p>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="links-warning"></a>
+                <a href="#top" class="warning">Warning Link</a><br /><br />
+                <label for="code-2">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="warning">Warning Link</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="links-help"></a>
+                <a href="#top" class="help">Help Link</a><br /><br />
+                <label for="code-3">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="help">Help Link</a>
+                </div>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <label>Toolitip modifier</label>
+                <p>The tooltip modifier is used to add to a tag the ability to show a tooltip.</p>
+                <a name="links-tooltip"></a>
+                <a href="#top" class="help">
+                    Tooltip
+              <span class="tooltip-container">
+                <span class="tooltip-label">This order has a high risk of fraud</span>
+              </span>
+                </a>
+                <br /><br /><br /><br />
+                <label for="code-3">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="help">Help Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="section-summary">
+        <a name="buttons"></a>
+        <h1>Buttons & Links as buttons</h1>
+        <p>In this section you can find all the buttons provided by this framework</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="buttons-primary"></a>
+                <label>Link as a primary button</label>
+                <a href="#top" class="btn primary">Primary Button</a><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="btn primary">Primary Button</a>
+                </div>
+                <br />
+                <label>Input as primary button</label>
+                <input type="button" class="btn primary" value="Primary Button"><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <input type="button" class="btn primary" value="Primary Button">
+                </div>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="buttons-default"></a>
+                <label>Link as default button</label>
+                <a href="#top" class="btn default">Default Button</a><br /><br />
+                <label for="code-5">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="btn default">Default Button</a>
+                </div>
+                <br />
+                <label>Input as default button</label>
+                <input type="button" class="btn default" value="Default Button"><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <input type="button" class="btn default" value="Default Button">
+                </div>
+
+                <br />
+                <div style="display:none">
+                    <ul class="segmented">
+                        <li><a href="#top" class="btn">Button</a></li>
+                        <li><a href="#top" class="btn">Button</a></li>
+                        <li><a href="#top" class="btn">Button</a></li>
+                        <li><a href="#top" class="btn">Button</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="buttons-destroy"></a>
+                <label>Link as destroy button</label>
+                <a href="#top" class="btn destroy">Destroy Button</a><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <a href="#top" class="btn destroy">Destroy Button</a>
+                </div>
+                <br />
+                <label>Input as destroy button</label>
+                <input type="button" class="btn destroy" value="Destroy Button"><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <input type="button" class="btn destroy" value="Destroy Button">
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="buttons-disabled"></a>
+                <label>Link as a disabled button</label>
+                <a href="#" class="btn disabled">Disabled Button</a><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <a href="#" class="btn disabled">Disabled Button</a>
+                </div>
+                <br />
+                <label>Input as disabled button</label>
+                <input type="button" class="btn disabled" value="Disabled Button"><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <input type="button" class="btn disabled" value="Disabled Button">
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="buttons-slim"></a>
+                <label>Slim Buttons</label>
+                <p>This is a modifier to reduce the size of primary, default or any button you need.</p>
+                <label>Link as a primary slim button</label>
+                <a href="#" class="btn primary btn-slim">Slim Primary Button</a><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <a href="#" class="btn primary btn-slim">Slim Primary Button</a>
+                </div>
+                <br />
+                <label>Input as default slim button</label>
+                <input type="button" class="btn default btn-slim" value="Slim Default Button"><br /><br />
+                <label for="code-4">Code</label>
+                <div class="container to-code">
+                    <input type="button" class="btn default btn-slim" value="Slim Default Button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="segmented-buttons"></a>
+        <h1>Segmented Buttons</h1>
+        <p>This section exaplains how to use segmented buttons, a modifier that provides the style to concatenate some buttons</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="segmented-primary"></a>
+                <label>Segmented Primary Buttons</label>
+                <ul class="segmented">
+                    <li>
+                        <div class="btn primary">Button one</div>
+                    </li>
+                    <li>
+                        <div class="btn primary">Button two</div>
+                    </li>
+                    <li>
+                        <div class="btn primary">Button three</div>
+                    </li>
+                </ul>
+
+                <br /><br />
+
+                <label for="code-1">Code</label>
+                <div class="container to-code">
+                    <ul class="segmented">
+                        <li>
+                            <div class="btn primary">Button one</div>
+                        </li>
+                        <li>
+                            <div class="btn primary">Button two</div>
+                        </li>
+                        <li>
+                            <div class="btn primary">Button three</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="segmented-default"></a>
+                <label>Segmented Default Buttons</label>
+
+                <ul class="segmented">
+                    <li>
+                        <div class="btn default">Button one</div>
+                    </li>
+                    <li>
+                        <div class="btn default">Button two</div>
+                    </li>
+                    <li>
+                        <div class="btn default">Button three</div>
+                    </li>
+                </ul>
+
+                <br /><br />
+                <label for="code-2">Code</label>
+                <div class="container to-code">
+                    <ul class="segmented">
+                        <li>
+                            <div class="btn default">Button one</div>
+                        </li>
+                        <li>
+                            <div class="btn default">Button two</div>
+                        </li>
+                        <li>
+                            <div class="btn default">Button three</div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="segmented-mixed"></a>
+                <label>Mixed Segmented Buttons</label>
+                <ul class="segmented">
+                    <li>
+                        <div class="btn primary btn-slim">Button primary</div>
+                    </li>
+                    <li>
+                        <div class="btn default btn-slim">Button default</div>
+                    </li>
+                    <li>
+                        <div class="btn disabled btn-slim">Button disabled</div>
+                    </li>
+                </ul>
+
+                <br /><br />
+                <label for="code-3">Code</label>
+                <div class="container to-code">
+                    <ul class="segmented">
+                        <li>
+                            <div class="btn primary btn-slim">Button primary</div>
+                        </li>
+                        <li>
+                            <div class="btn default btn-slim">Button default</div>
+                        </li>
+                        <li>
+                            <div class="btn disabled btn-slim">Button disabled</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="tags"></a>
+        <h1>Tags</h1>
+        <p></p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-general"></a>
+                <label>General Structure</label>
+                <p>A tag can be generated by applying a main class and optionally one or more modifier classes. To generate a tag, you should apply the main class "tag", one of the 4 modifier classes named as colors and optionally the modifier class "inactive". The general structure is as follows:</p>
+                <label for="code-9">Code</label>
+                <div class="container to-code">
+                    <span class="tag [<modifier class 1> [<modifier class 2>]]">Tag 1</span>
+                </div>
+                <p>The following samples are ilustrating the use of the modifiers. Notice that one of them has two modifiers, one that applies the color and other to apply a level of transparency.</p>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-green"></a>
+                <span class="tag green">Approved</span><br /><br />
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    <span class="tag green">Approved</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-yellow"></a>
+                <span class="tag yellow">Unfulfilled</span><br /><br />
+                <label for="code-6">Code</label>
+                <div class="container to-code">
+                    <span class="tag yellow">Unfulfilled</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-pink"></a>
+                <span class="tag pink">Spam</span><br /><br />
+                <label for="code-6">Code</label>
+                <div class="container to-code">
+                    <span class="tag pink">Spam</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-lightgray"></a>
+                <span class="tag lightgray">Light gray tag</span><br /><br />
+                <label for="code-6">Code</label>
+                <div class="container to-code">
+                    <span class="tag lightgray">Light gray tag</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-gray"></a>
+                <span class="tag gray">Gray tag</span><br /><br />
+                <label for="code-7">Code</label>
+                <div class="container to-code">
+                    <span class="tag gray">Gray tag</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-blue"></a>
+                <span class="tag blue">Blue tag</span><br /><br />
+                <label for="code-8">Code</label>
+                <div class="container to-code">
+                    <span class="tag blue">Blue tag</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-orange"></a>
+                <span class="tag orange">Orange tag</span><br /><br />
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    <span class="tag orange">Orange tag</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-inactive"></a>
+                <label>Inactive tag</label>
+                <p>This sample tag is used to show how to apply the "inactive" effect and it has three classes, the main class "tag", the modifier color class "blue" and the modifier class "inactive".</p>
+                <p>As you can see, the "inactive" class should be used along with "tag" and one of the available modifier color classes.</p>
+                <span class="tag blue inactive">Inactive tag</span><br /><br />
+                <label for="code-9">Code</label>
+                <div class="container to-code">
+                    <span class="tag blue inactive">Inactive tag</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tags-closable"></a>
+                <label>Closable tag</label>
+                <p>This element has its own color and effects so it doesn't need any modifier color class. As you can see in the code below, it is necessary to include the element that shows the closable button inside the tag.</p>
+
+                <span class="tag closable">Closable tag<span class="close"></span></span>
+
+                <br /><br />
+                <label for="code-9">Code</label>
+                <div class="container to-code">
+                    <span class="tag closable">Closable tag <span class="close"></span> </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="tables"></a>
+        <h1>Tables</h1>
+        <p>This section describes the tables used by the framework. The tables that use the whole available width are described right after.</p>
+    </div>
+    <div class="section-content">
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tables-regular"></a>
+                <label>Regular table</label>
+                <table class="table-section">
+                    <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                        <th>Column 4</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><a href="#top">Link</a></td>
+                        <td><span class="tag lightgray">Tag</span></td>
+                        <td>Regular text</td>
+                        <td><a href="#top" class="btn default">Button</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#top">Link</a></td>
+                        <td><span class="tag orange">Tag</span></td>
+                        <td>Regular text</td>
+                        <td><a href="#top" class="btn default">Button</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#top">Link</a></td>
+                        <td><span class="tag gray">Tag</span></td>
+                        <td>Regular text</td>
+                        <td><a href="#top" class="btn default">Button</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br />
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    <table class="table-section">
+                        <thead>
+                        <tr>
+                            <th>Column 1</th>
+                            <th>Column 2</th>
+                            <th>Column 3</th>
+                            <th>Column 4</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="#top">Link</a></td>
+                            <td><span class="tag lightgray">Tag</span></td>
+                            <td>Regular text</td>
+                            <td><a href="#top" class="btn default">Button</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#top">Link</a></td>
+                            <td><span class="tag orange">Tag</span></td>
+                            <td>Regular text</td>
+                            <td><a href="#top" class="btn default">Button</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="#top">Link</a></td>
+                            <td><span class="tag gray">Tag</span></td>
+                            <td>Regular text</td>
+                            <td><a href="#top" class="btn default">Button</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="tables-full"></a>
+                <label>Full width table</label>
+                <p>This table fills the whole available width. If used in place of "section", it will fill the whole iframe width, or else, it will fill the available width inside the tag where it is inserted.</p>
+                <p>In the example below, it is inserted inside a "section-row", in a "section" with "section-summary", so it doesn't fit the whole width. For an example where it fits the full width, check the <a href="http://seaff.microapps.com/full-width-table.html">Full Width Table</a>. Notice in this case that the absence of the "section-summary" div is enough to make it fill the full width of the page. </p>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-listing">
+                <div class="section-options">
+                    <ul class="section-tabs">
+                        <li class="active"><a href="#top">Tab 1</a></li>
+                        <li class=""><a href="#top">Tab 2</a></li>
+                        <li class=""><a href="#top">Tab 3</a></li>
+                    </ul>
+                    <div class="section-filter">
+                      <div class="section-row">
+                        <a class="btn filter-left" href="#">Filter <span class="icon ico-down"></span></a>
+                        <input class="input-search" type="text" placeholder="Information about this filter">
+                      </div>
+                    </div>
+                    <div class="section-content">
+                        <div class="section-row">
+                            <table class="table-section">
+                                <thead>
+                                <tr>
+                                    <th class="sortable">Column 1</th>
+                                    <th class="sortable">Column 2</th>
+                                    <th class="sortable">Column 3</th>
+                                    <th class="sortable">Column 4</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><a href="#top">Link</a></td>
+                                    <td><span class="tag lightgray">Tag</span></td>
+                                    <td>Regular text</td>
+                                    <td><a href="#top" class="btn default">Button</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#top">Link</a></td>
+                                    <td><span class="tag orange">Tag</span></td>
+                                    <td>Regular text</td>
+                                    <td><a href="#top" class="btn default">Button</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#top">Link</a></td>
+                                    <td><span class="tag gray">Tag</span></td>
+                                    <td>Regular text</td>
+                                    <td><a href="#top" class="btn default">Button</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section-cell">
+                <label>Code</label>
+                <div class="container to-code">
+                    <div class="section-listing">
+                        <div class="section-options">
+                            <ul class="section-tabs">
+                                <li class="active"><a href="#top">Tab 1</a></li>
+                                <li class=""><a href="#top">Tab 2</a></li>
+                                <li class=""><a href="#top">Tab 3</a></li>
+                            </ul>
+                            <div class="section-filter">
+                              <div class="section-row">
+                                <a class="btn filter-left" href="#">Filter <span class="icon ico-down"></span></a>
+                                <input class="input-search" type="text" placeholder="Information about this filter">
+                              </div>
+                            </div>
+                            <div class="section-content">
+                                <div class="section-row">
+                                    <table class="table-section">
+                                        <thead>
+                                        <tr>
+                                            <th class="sortable">Column 1</th>
+                                            <th class="sortable">Column 2</th>
+                                            <th class="sortable">Column 3</th>
+                                            <th class="sortable">Column 4</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><a href="#top">Link</a></td>
+                                            <td><span class="tag lightgray">Tag</span></td>
+                                            <td>Regular text</td>
+                                            <td><a href="#top" class="btn default">Button</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#top">Link</a></td>
+                                            <td><span class="tag orange">Tag</span></td>
+                                            <td>Regular text</td>
+                                            <td><a href="#top" class="btn default">Button</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#top">Link</a></td>
+                                            <td><span class="tag gray">Tag</span></td>
+                                            <td>Regular text</td>
+                                            <td><a href="#top" class="btn default">Button</a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="message-boxes"></a>
+        <h1>Message boxes</h1>
+        <p>List of available message boxes. They should be placed right below the body tag.</p>
+    </div>
+    <div class="section-content">
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="warning-box"></a>
+                <div class="box notice"><i class="ico-notice"></i>Message</div>
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    &lt;body>
+                    <div class="box notice"><i class="ico-notice"></i>Message</div>
+                    ...
+                </div>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <a name="notice-box"></a>
+                <div class="box warning"><i class="ico-warning"></i>Message</div>
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    &lt;body>
+                    <div class="box notice"><i class="ico-warning"></i>Message</div>
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-summary">
+        <a name="icons"></a>
+        <h1>Icons</h1>
+        <p>This section lists the available icons in the Shopify admin and describes how to use them.</p>
+    </div>
+    <div class="section-content">
+
+        <div class="section-row">
+            <div class="section-cell">
+                <span id="ico-check" class="icon ico-check"></span>
+                <label for="ico-check">ico-check</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-checkmark-green" class="icon ico-checkmark-green"></span>
+                <label for="ico-checkmark-green">ico-checkmark-green</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-prev" class="icon ico-prev"></span>
+                <label for="ico-prev">ico-prev</label>
+            </div>
+
+            <div class="section-cell">
+                <span id="ico-next" class="icon ico-next"></span>
+                <label for="ico-next    ">ico-next</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-down" class="icon ico-down"></span>
+                <label for="ico-down">ico-down</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-down-gray" class="icon ico-down-gray"></span>
+                <label for="ico-down-gray">ico-down-gray</label>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <span id="ico-clear-bluegray" class="icon ico-clear-bluegray"></span>
+                <label for="ico-clear-bluegray">ico-clear-bluegray</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-fail-red" class="icon ico-fail-red"></span>
+                <label for="ico-fail-red">ico-fail-red</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-cancel-blue" class="icon ico-cancel-blue"></span>
+                <label for="ico-cancel-blue">ico-cancel-blue</label>
+            </div>
+
+            <div class="section-cell">
+                <span id="ico-cancel-lightblue" class="icon ico-cancel-lightblue"></span>
+                <label for="ico-cancel-lightblue">ico-cancel-lightblue</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-notice" class="icon ico-notice"></span>
+                <label for="ico-notice">ico-notice</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-warning" class="icon ico-warning"></span>
+                <label for="ico-warning">ico-warning</label>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <span id="ico-order-page" class="icon ico-order-page"></span>
+                <label for="ico-order-page">ico-order-page</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-products-page" class="icon ico-products-page"></span>
+                <label for="ico-products-page">ico-products-page</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-customers-page" class="icon ico-customers-page"></span>
+                <label for="ico-customers-page">ico-customers-page</label>
+            </div>
+
+            <div class="section-cell">
+                <span id="ico-calendar-blue" class="icon ico-calendar-blue"></span>
+                <label for="ico-calendar-blue">ico-calendar-blue</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-popular-searches" class="icon ico-popular-searches"></span>
+                <label for="ico-popular-searches">ico-popular-searches</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-buy-button" class="icon ico-buy-button"></span>
+                <label for="ico-buy-button">ico-buy-button</label>
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <span id="ico-mobile-visitors" class="icon ico-mobile-visitors"></span>
+                <label for="ico-mobile-visitors">ico-mobile-visitors</label>
+            </div>
+            <div class="section-cell">
+                <span id="ico-help-blue" class="icon ico-help-blue"></span>
+                <label for="ico-help-blue">ico-help-blue</label>
+            </div>
+            <div class="section-cell" style="visibility:hidden;">
+            </div>
+
+            <div class="section-cell" style="visibility:hidden;">
+            </div>
+            <div class="section-cell" style="visibility:hidden;">
+            </div>
+            <div class="section-cell" style="visibility:hidden;">
+            </div>
+        </div>
+
+        <div class="section-row">
+            <div class="section-cell">
+                <label>How to use</label>
+                <p>You can put the icon you need inside any element, like buttons, anchors, etc. Also you can use the class "icon" to view them like simple icons.</p>
+                <label for="code-10">Code</label>
+                <div class="container to-code">
+                    <span class="icon ico-check"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(
+            function()
+            {
+                createAllSnippets();
+            }
+    );
+</script>
+</body>
+</html>
